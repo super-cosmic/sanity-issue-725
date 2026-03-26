@@ -8,12 +8,17 @@ export default defineType({
     defineField({
       name: 'title',
       title: 'Title',
-      type: 'string',
+      type: 'internationalizedArrayString',
     }),
     defineField({
       name: 'description',
       title: 'Description',
-      type: 'text',
+      type: 'internationalizedArrayText',
     }),
   ],
+  preview: {
+    select: {
+      title: 'title.0.value',
+    },
+  },
 })

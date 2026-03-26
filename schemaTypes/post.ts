@@ -8,7 +8,7 @@ export default defineType({
     defineField({
       name: 'title',
       title: 'Title',
-      type: 'string',
+      type: 'internationalizedArrayString',
     }),
     defineField({
       name: 'slug',
@@ -53,8 +53,8 @@ export default defineType({
 
   preview: {
     select: {
-      title: 'title',
-      author: 'author.name',
+      title: 'title.0.value',
+      author: 'author.name.0.value',
       media: 'mainImage',
     },
     prepare(selection) {
