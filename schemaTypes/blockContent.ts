@@ -1,4 +1,5 @@
 import {defineType, defineArrayMember} from 'sanity'
+import { blockContentLink } from './blockContentLink'
 
 /**
  * This is the schema definition for the rich text fields used for
@@ -40,20 +41,7 @@ export default defineType({
           {title: 'Emphasis', value: 'em'},
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
-        annotations: [
-          {
-            title: 'URL',
-            name: 'link',
-            type: 'object',
-            fields: [
-              {
-                title: 'URL',
-                name: 'href',
-                type: 'url',
-              },
-            ],
-          },
-        ],
+        annotations: [blockContentLink],
       },
     }),
     // You can add additional types here. Note that you can't use

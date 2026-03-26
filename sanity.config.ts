@@ -13,7 +13,7 @@ export default defineConfig({
       buttonAddAll: false,
       languageDisplay: 'titleOnly',
       defaultLanguages: ['en'],
-      fieldTypes: ['string', 'text', 'boolean', 'number', 'url'],
+      fieldTypes: ['string', 'text', 'boolean', 'number', 'url', 'blockContent'],
       languages: [{id: 'en', title: 'English'}, {id: 'nl', title: 'Dutch'}]
     }),],
   schema: {
