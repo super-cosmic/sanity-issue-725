@@ -4,6 +4,7 @@ import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
 import {internationalizedArray} from 'sanity-plugin-internationalized-array'
 import {assist} from '@sanity/assist'
+import {media} from 'sanity-plugin-media'
 
 const languages = [
   {id: 'en', title: 'English'},
@@ -18,6 +19,7 @@ export default defineConfig({
   plugins: [
     structureTool(),
     visionTool(),
+    media(),
     assist({
       translate: {
         field: {
