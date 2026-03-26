@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import {defineArrayMember, defineField, defineType} from 'sanity'
 
 export default defineType({
   name: 'post',
@@ -48,6 +48,12 @@ export default defineType({
       name: 'body',
       title: 'Body',
       type: 'internationalizedArrayBlockContent',
+    }),
+    defineField({
+      name: 'sections',
+      type: 'array',
+      title: 'Sections',
+      of: [defineArrayMember({ type: 'sectionText' })],
     }),
   ],
 
