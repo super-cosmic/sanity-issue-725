@@ -5,13 +5,10 @@ import {schemaTypes} from './schemaTypes'
 
 export default defineConfig({
   name: 'default',
-  title: 'Supercosmic',
-
+  title: 'Supercosmic issue #725',
   projectId: '3onhhedu',
   dataset: 'production',
-
   plugins: [structureTool(), visionTool()],
-
   schema: {
     types: schemaTypes,
   },
