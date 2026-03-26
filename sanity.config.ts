@@ -2,14 +2,31 @@ import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
-import { internationalizedArray } from 'sanity-plugin-internationalized-array'
+import {internationalizedArray} from 'sanity-plugin-internationalized-array'
+import {assist} from '@sanity/assist'
+
+const languages = [
+  {id: 'en', title: 'English'},
+  {id: 'nl', title: 'Dutch'},
+]
 
 export default defineConfig({
   name: 'default',
   title: 'Studio issue #725',
   projectId: 'ghpxztu2',
   dataset: 'production',
-  plugins: [structureTool(), visionTool(), internationalizedArray({
+  plugins: [
+    structureTool(),
+    visionTool(),
+    assist({
+      translate: {
+        field: {
+          documentTypes: ['post'],
+          languages,
+        },
+      },
+    }),
+    internationalizedArray({
       buttonAddAll: false,
       languageDisplay: 'titleOnly',
       defaultLanguages: ['en'],
@@ -17,8 +34,9 @@ export default defineConfig({
         documentTypes: ['post'],
       },
       fieldTypes: ['string', 'text', 'boolean', 'number', 'url', 'blockContent'],
-      languages: [{id: 'en', title: 'English'}, {id: 'nl', title: 'Dutch'}]
-    }),],
+      languages,
+    }),
+  ],
   schema: {
     types: schemaTypes,
   },
