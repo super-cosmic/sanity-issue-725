@@ -26,7 +26,7 @@ export const sectionText = defineType({
     prepare({ documentTitle, text }) {
       return {
         title: documentTitle || 'Untitled',
-        subtitle: previewBlockContent(text)
+        subtitle: `SECTION TEXT | ${previewBlockContent(text)}`
       }
     },
   },

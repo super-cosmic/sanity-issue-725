@@ -13,6 +13,9 @@ export default defineConfig({
       buttonAddAll: false,
       languageDisplay: 'titleOnly',
       defaultLanguages: ['en'],
+      languageFilter: {
+        documentTypes: ['post'],
+      },
       fieldTypes: ['string', 'text', 'boolean', 'number', 'url', 'blockContent'],
       languages: [{id: 'en', title: 'English'}, {id: 'nl', title: 'Dutch'}]
     }),],

@@ -53,7 +53,7 @@ export default defineType({
       name: 'sections',
       type: 'array',
       title: 'Sections',
-      of: [defineArrayMember({ type: 'sectionText' })],
+      of: [defineArrayMember({ type: 'sectionText' }), defineArrayMember({ type: 'sectionTabs' })],
     }),
   ],
 
